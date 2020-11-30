@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/lib/java-json.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/webservices-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/webservices-tools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/AbsoluteLayout.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/activation.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/webservices-extra.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/webservices-extra-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/lib/webservices-rt.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
