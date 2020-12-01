@@ -1,14 +1,10 @@
 
 import Controller.EscolaController;
-import Controller.FornecedorController;
-import Modelo.Endereco;
-import Modelo.Fornecedor;
+import Controller.PedidoCompraController;
 import Persistencia.Cliente_Dao;
-import Persistencia.EscolaDao;
 import Persistencia.FornecedorDao;
+import Persistencia.PedidoCompraDAO;
 import java.io.IOException;
-import java.util.ArrayList;
-import services.BuscarCep;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -30,10 +26,16 @@ public class text_Fornecedor {
      // System.out.println(c.litarEscolas());
         //c.CadastrarEscola("h", "11", "11", "11", new Endereco("22", "11", "11", "1111", "11111", 0, "1111"));
        // EscolaDao esc=new EscolaDao();
-       System.out.println(dao.LerFornecedor());
+       //System.out.println(dao.LerFornecedor());
         Cliente_Dao daoCli=new
  Cliente_Dao();
-        System.out.println(daoCli);
+       // System.out.println(daoCli);
+        PedidoCompraController pd=new PedidoCompraController();
+       // System.out.println(pd.pegarCodigo());
+        PedidoCompraDAO Pdd=new PedidoCompraDAO();
+        System.out.println(Pdd.ListarPedidoCompra());
+       
+        
         
        //
       

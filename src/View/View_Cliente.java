@@ -150,8 +150,8 @@ public class View_Cliente extends javax.swing.JInternalFrame {
 
     private void btn_CadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_CadastrarMouseClicked
         View__Cliente_ clienteTela=new View__Cliente_();
-        clienteTela.updateUI();
-        gerenteView.abrirTela(new View__Cliente_());
+       
+        gerenteView.abrirTela(clienteTela);
 
 
     }//GEN-LAST:event_btn_CadastrarMouseClicked

@@ -47,8 +47,8 @@ public class PedidoCompraDAO {
         }
     }
 
-    public ArrayList<PedidoCompra> ListarPedidoCompra(PedidoCompra pedidoCompra) throws FileNotFoundException, IOException {
-        pedidoCompra = new PedidoCompra();
+    public ArrayList<PedidoCompra> ListarPedidoCompra()  {
+        
 
         String linha = null;
         try ( BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -58,6 +58,8 @@ public class PedidoCompraDAO {
             while (linha != null) {
 
                 pedido(linha.split(";"));
+               
+                linha = br.readLine();
 
             }
 
@@ -82,7 +84,7 @@ public class PedidoCompraDAO {
                 + pedidoCompra.getData() + ";"
                 +pedidoCompra.getValor()+";"
                 +pedidoCompra.getFornecedor().getRazaoSocial()+";"
-                +pedidoCompra.getEscola();
+                +pedidoCompra.getEscola()+";";
               
       
 
@@ -127,5 +129,6 @@ public class PedidoCompraDAO {
         return null;
 
     }
+ 
 
 }

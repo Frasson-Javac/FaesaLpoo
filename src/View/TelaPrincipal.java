@@ -89,6 +89,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(Menu_PedidoCompra);
 
         Menu_Produto.setText("Produto");
+        Menu_Produto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Menu_ProdutoMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(Menu_Produto);
 
         Menu_Cliente.setText("Cliente");
@@ -154,6 +159,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
        clientetela.updateUI();
         gerenteView.abrirTela(clientetela);
     }//GEN-LAST:event_Menu_ClienteMouseClicked
+
+    private void Menu_ProdutoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Menu_ProdutoMouseClicked
+        // TODO add your handling code here:
+        View_Produto produtoTela=new View_Produto();
+       // gerenteView.abrirTela();
+    }//GEN-LAST:event_Menu_ProdutoMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JDesktopPane Desktop;

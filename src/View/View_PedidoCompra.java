@@ -11,10 +11,13 @@ import Modelo.Fornecedor;
 import Modelo.Produto;
 import Persistencia.EscolaDao;
 import Persistencia.FornecedorDao;
+import Persistencia.PedidoCompraDAO;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 public class View_PedidoCompra extends javax.swing.JInternalFrame {
@@ -23,6 +26,7 @@ public class View_PedidoCompra extends javax.swing.JInternalFrame {
     DefaultTableModel dtm = new DefaultTableModel();
     Produto produto = new Produto();
     Fornecedor fornecedor = new Fornecedor();
+    ArrayList<Fornecedor> fornecedores=new ArrayList<>();
     Escola escola = new Escola();
 
     private static View_PedidoCompra pedidocompra;
@@ -94,6 +98,7 @@ public class View_PedidoCompra extends javax.swing.JInternalFrame {
         jLabel2.setText("Código da Compra");
 
         txt_Cod_Compra.setFont(new java.awt.Font("Verdana", 0, 11)); // NOI18N
+        txt_Cod_Compra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txt_Cod_Compra.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.lightGray, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.gray));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 12)); // NOI18N
@@ -214,8 +219,8 @@ public class View_PedidoCompra extends javax.swing.JInternalFrame {
                                 .addComponent(txt_DataProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(45, 45, 45)
                                 .addComponent(txt_HoraProduto, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txt_Cod_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel2)
+                            .addComponent(txt_Cod_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -345,7 +350,7 @@ public class View_PedidoCompra extends javax.swing.JInternalFrame {
         pedidoCompraController.casdastrarPedidoCompra(Integer.parseInt(txt_Cod_Compra.getText()),
                 Integer.parseInt(txt_cod_prod.getText()), (int) spn_qtd.getValue(), txt_TipoUniforme.getText(), genero(),
                 (String) box_Tamanho.getSelectedItem(), Double.parseDouble(txt_ValorProduto.getText().replace(",", ".")),
-                txt_HoraProduto.getSelectedText(), txt_DataProduto.getText(),
+                txt_HoraProduto.getText(), txt_DataProduto.getText(),
                 Float.parseFloat(txt_ValorTotal.getText().replace(",", ".")),
                 (String) box_Fornecedor.getSelectedItem(),
                 (String) boxEscola.getSelectedItem());
@@ -401,6 +406,8 @@ public class View_PedidoCompra extends javax.swing.JInternalFrame {
         String hora = sdf.format(new Date(System.currentTimeMillis()));
         txt_HoraProduto.setText(hora);
         txt_HoraProduto.setEnabled(false);
+        txt_Cod_Compra.setEnabled(false);
+     
 
         preecherListaComboBox();
 
@@ -412,7 +419,7 @@ public class View_PedidoCompra extends javax.swing.JInternalFrame {
     public void preecherListaComboBox() {
 
         FornecedorDao fornecedordao = new FornecedorDao();
-        ArrayList<Fornecedor> fornecedores = fornecedordao.LerFornecedor();
+        fornecedores = fornecedordao.LerFornecedor();
 
         for (Fornecedor fornecedor : fornecedores) {
 
@@ -446,6 +453,8 @@ public class View_PedidoCompra extends javax.swing.JInternalFrame {
         }
 
     }
+    
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JRadioButton Radio_Btn_Feminino;

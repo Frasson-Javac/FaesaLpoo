@@ -96,9 +96,6 @@ public class PedidoCompra {
         pedidoCompraDAO.gravarPedidoCompra(pedidoCompra);
     }
 
-    public void ListarPedido(PedidoCompraDAO pedidoCompraDao) throws IOException {
-        pedidoCompraDao.ListarPedidoCompra(this);
-
-    }
+    
 
 }
